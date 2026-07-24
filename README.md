@@ -1,2 +1,2 @@
-# cCircularBuffer
-Circular buffer used for my common algos
+# cErrorDriver
+Error Driver for my various projects
