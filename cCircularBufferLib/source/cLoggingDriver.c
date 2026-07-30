@@ -87,12 +87,12 @@ void cErrorDriverDebugAssertSpin( char const * const expression,
  * @param memorySizeInBytes Size of the memory in bytes
  * @return an error structure if unsuccessful, or ERROR_NONE if successful.
  */
-sErrorInfo_t initErrorDriver( uint16_t * readMemory, 
+sErrorCompact_t initErrorDriver( uint16_t * readMemory, 
                                  uint16_t * writeMemory,
                                  uint32_t memoryAddress,
                                  uint16_t memorySizeInBytes )
 {
-    sErrorInfo_t retValue = BLANK_ERROR_STRUCT;
+    sErrorCompact_t retValue = BLANK_ERROR_STRUCT;
     if( THIS->isInitialized == false )
     {
         if( readMemory == NULL || writeMemory == NULL )
@@ -123,14 +123,14 @@ sErrorInfo_t initErrorDriver( uint16_t * readMemory,
  * @param moduleName The name of the module where the error occurred.
  * @param lineNumber The line number where the error occurred
  */
-sErrorInfo_t createErrorInfo( uint16_t errorCode, 
+sErrorCompact_t createErrorInfo( uint16_t errorCode, 
                                  uint16_t fileModuleEnum, 
                                  uint16_t lineNumber, 
                                  uint8_t const * const errorMessage, 
                                  uint8_t const * const moduleName )
 {
-    sErrorInfo_t retValue = BLANK_ERROR_STRUCT;
-    sErrorInfo_t commonErrorInfo = BLANK_ERROR_STRUCT;
+    sErrorCompact_t retValue = BLANK_ERROR_STRUCT;
+    sErrorCompact_t commonErrorInfo = BLANK_ERROR_STRUCT;
     size_t errorMessageLength = 0;
     uint8_t const * errorMessagePtr = errorMessage;
     /** Only fill this structure out if the error code is non-zero */

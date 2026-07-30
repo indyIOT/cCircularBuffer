@@ -1,6 +1,6 @@
 /** ***********************************************
- * @file cErrorDriver_test.cpp
- * @brief Unit tests for cErrorDriver.c
+ * @file cLoggingDriver_test.cpp
+ * @brief Unit tests for cLoggingDriver.c
  * @author Anthony Garza
  * @copyright All rights reserved 2026
 *************************************************/
@@ -53,9 +53,9 @@ namespace
     }
 } // namespace
 
-TEST( cErrorDriver, initErrorDriver )
+TEST( cLoggingDriver, initLoggingDriver )
 {
-    sErrorInfo_t errorInfo = initErrorDriver(
+    sErrorCompact_t errorInfo = initLoggingDriver(
         (std::uint16_t*)&fakeReadMemory,
         (std::uint16_t*)&fakeWriteMemory,
         0U,
